@@ -6,6 +6,11 @@ import java.util.Locale
 
 object Excercise_5_FuncionsSolution {
 
+
+    fun generateRandomString(length: Int = 10): String =
+        (('a'..'z') + ('A'..'Z'))
+            .run { (1..length).map { random() }.joinToString("") }
+
     fun DayOfWeek.isWeekend(): Boolean = this == DayOfWeek.SATURDAY || this == DayOfWeek.SUNDAY
 
     fun String?.removeBrackets(): String =

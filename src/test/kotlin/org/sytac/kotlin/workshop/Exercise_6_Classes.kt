@@ -2,25 +2,18 @@ package org.sytac.kotlin.workshop
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
-import io.kotest.matchers.shouldBe
 import java.time.LocalDate
 import org.junit.jupiter.api.Test
+import org.sytac.kotlin.workshop.RunnerFixture.RUNNERS_LIST
 import org.sytac.kotlin.workshop.sport.Runner
 
 class Exercise_6_Classes {
 
-
     @Test
-    fun `implement isWeekend function as extension function on DayOfWeek`() {
-        //uncomment below
-//        assertThat(LocalDateTime.now().dayOfWeek.isWeekend()).isEqualTo(false)
-    }
-
-    @Test
-    fun `convert  functions from StringExercises to extensionFun`() {
-        val input = "kotlin is awesome"
-        //uncomment below
-//        assertThat(input.reverseWords()).isEqualTo("awesome is kotlin")
+    fun `take first or null runner form the list and retire it, safely catching error without try catch, returning activeCareer field or throwing IllegalStateException on failure - print activeCareer on success, assert that career not active anymore`() {
+        // todo implement retiring a runner using runCatching ")
+        val resultIsActiveCareer: Boolean? = RUNNERS_LIST.firstOrNull()?.activeCareer ?: true
+        assertThat(resultIsActiveCareer).isEqualTo(false)
     }
 
     @Test
@@ -29,6 +22,15 @@ class Exercise_6_Classes {
         //uncomment below
 //        assertThat(runner.runId.value).isEqualTo("abc12345")
 //        assertThat(runner.copy(runId = RunId.generateId()).isNotNull()
+    }
+
+
+    @Test
+    fun `add static factory method  createNew() to Runner class - all param should have a default`() {
+        //uncomment below
+
+        //val newRunner = Runner.createNew()
+        //assertThat(newRunner).isNotNull()
     }
 
     @Test
@@ -44,13 +46,12 @@ class Exercise_6_Classes {
     }
 
     @Test
-    fun `it should generate a runner description using kotlin run { } function`() {
-        val runner = Runner("John", LocalDate.parse("2000-05-01"), 1.75, 70.0)
-
-        val resultDescription = TODO("implement with run { } function to generate a description")
+    fun `add coach to a runner with apply {} and generate a runner description using kotlin run { } function`() {
+        val runner = RunnerFixture.SIMPLE_RUNNER
+        val resultDescription = TODO("implement with apply and run run { } function to generate a description")
 
         //uncomment below
-//        assertThat(resultDescription).isEqualTo("Runner John, age: 25, active: true")
+//        assertThat(resultDescription).isEqualTo("Runner John, age: 25, coach: John Doe's Coach")
     }
 
 }

@@ -9,6 +9,7 @@ import assertk.assertions.isNotNull
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.util.UUID
 import kotlin.random.Random
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
@@ -16,25 +17,34 @@ import org.junit.jupiter.api.Test
 
 class Exercise_3_Collections {
 
+    //implement this function to generate a list of 5 random integers from 100 to 500, sort them map them to Pairs(Int, random UUID) and return the list
+    fun generatePairs(): List<Pair<Int, UUID>> = TODO()
 
     @Test
     fun `generate squares of even numbers between 1 and 10 then take if not empty also println all results`() {
-        val result = (1..20)
+        val result: List<Int>? = (1..10)
             .filter { it % 2 == 0 }
             .map { it * it }
             .takeIf { it.isNotEmpty() }
             .also { resultList -> resultList?.forEach { println(it) } }
-        assertThat(result).isEqualTo(listOf(144, 196, 256, 324, 400))
+        assertThat(result).isEqualTo(listOf(4, 16, 36, 64, 100))
     }
 
     @Test
-    fun `filter non-null, non-blank strings and zip with length`() {
+    fun `filter non-null, non-blank strings and pair with length`() {
         val input = listOf("kotlin", null, " ", "Go", "Abc", "", null)
-        val noNullInout = input
-            .mapNotNull { it }
-            .filterNot { it.isBlank() }
-        val zipped = noNullInout.zip(noNullInout.map { it.length })
-        assertThat(zipped).isEqualTo(listOf("kotlin" to 6, "Go" to 2, "Abc" to 3))
+
+        val result: List<Pair<String, Int>> = emptyList() //todo implement me
+
+        assertThat(result).isEqualTo(listOf("kotlin" to 6, "Go" to 2, "Abc" to 3))
+
+        //see destructure of an above map first element to word and len params
+        val (word: String, length: Int) = result.first()
+
+        //for each element of a zipped map destructure it to word and length and print
+        result.forEach {
+            (word, length) -> println("Word: $word, Length: $length")
+        }
     }
 
     @Test
@@ -86,9 +96,5 @@ class Exercise_3_Collections {
                 expectedStartDate.plusDays(4) to "FRIDAY"
             )
         )
-    }
-
-    companion object {
-        fun generateInts(): List<Int> = (1..20).map { Random.nextInt(0, 100) }
     }
 }

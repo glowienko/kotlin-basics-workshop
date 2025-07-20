@@ -28,7 +28,7 @@ data class Runner(
     val medals: List<Medal> = listOf(),
     val gear: MutableList<String> = mutableListOf(),
     val country: String? = null,
-    val coach: Coach? = null,
+    var coach: Coach? = null,
 ) : Human {
     val nickName: String
         get() = "Runner $name  nr. ${Random.nextInt(1..1000)}"

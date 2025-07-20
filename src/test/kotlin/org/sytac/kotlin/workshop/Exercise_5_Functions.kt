@@ -1,10 +1,40 @@
 package org.sytac.kotlin.workshop
 
+import assertk.assertThat
+import assertk.assertions.hasSize
+import assertk.assertions.isEqualTo
+import assertk.assertions.isNotEmpty
 import org.junit.jupiter.api.Test
 
 class Exercise_5_Functions {
 
 
+    @Test
+    fun `create a fun that generates random string of a given length with default len = 10`() {
+        val charset = ('a'..'z') + ('A'..'Z')
+        val resultRandomString: String = generateRandomString(22)
+
+        assertThat(resultRandomString).isNotEmpty()
+        assertThat(generateRandomString(10).length).isEqualTo(10)
+        assertThat(generateRandomString(15).length).isEqualTo(15)
+    }
+
+    fun generateRandomString(length: Int = 10): String {
+        val charset = ('a'..'z') + ('A'..'Z')
+        TODO("implement random string generation logic here, make this function 1 linter expression :) ")
+    }
+
+
+    @Test
+    fun `add 2 random string gear to the runner - use apply {} to apply addGear(), use spread operator - pass gear as as an array and then list, see difference`() {
+        val gear: List<String> = listOf(generateRandomString(), generateRandomString(5))
+        val gear2 = arrayOf(generateRandomString(), generateRandomString(5))
+
+        val runnerWithGear =  TODO()
+        //uncomment below to check your solution
+//        assertThat(runnerWithGear.gear).isNotEmpty()
+//        assertThat(runnerWithGear.gear).hasSize(2)
+    }
 
     @Test
     fun `implement isWeekend function as extension function on DayOfWeek`() {
@@ -19,7 +49,6 @@ class Exercise_5_Functions {
 //        assertThat(input.reverseWords()).isEqualTo("awesome is kotlin")
     }
 
-    //todo add test for creating a fun that generates a random string of given length or sth - with default value of 10 or sth
 
 
 }

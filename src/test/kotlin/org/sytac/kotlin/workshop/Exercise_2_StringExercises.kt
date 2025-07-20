@@ -71,16 +71,6 @@ class Exercise_2_StringExercises {
     fun maskCardNumber(number: String): String {
         TODO("Mask all but last 4 digits with *")
     }
-
-//    // 7. Remove duplicate letters, keep first occurrence
-//    @Test
-//    fun `should remove duplicate letters ignoring case`() {
-//        assertThat(removeDuplicateLetters("aabbcccc")).isEqualTo("abc")
-//    }
-//
-//    fun removeDuplicateLetters(input: String): String {
-//        TODO("Use filter and a mutable set to track lowercase letters")
-//    }
 }
 
 
