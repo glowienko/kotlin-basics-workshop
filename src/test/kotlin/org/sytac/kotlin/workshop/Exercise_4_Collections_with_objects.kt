@@ -6,12 +6,9 @@ import assertk.assertions.isFalse
 import assertk.assertions.isNotEmpty
 import assertk.assertions.isNotNull
 import assertk.assertions.isTrue
-import java.time.LocalDate
-import java.time.Month
 import org.junit.jupiter.api.Test
 import org.sytac.kotlin.workshop.RunnerFixture.SIMPLE_RUNNER
 import org.sytac.kotlin.workshop.RunnerFixture.generateRandomRunners
-import org.sytac.kotlin.workshop.sport.Coach
 import org.sytac.kotlin.workshop.sport.Medal
 import org.sytac.kotlin.workshop.sport.MedalType
 import org.sytac.kotlin.workshop.sport.Runner
