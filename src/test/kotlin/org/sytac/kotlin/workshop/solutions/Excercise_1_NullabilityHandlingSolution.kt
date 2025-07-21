@@ -27,14 +27,6 @@ object Excercise_1_NullabilityHandlingSolution {
     fun isOdd(input: Any?): Boolean {
         return when (input) {
             is Int -> input % 2 != 0
-            is String -> {
-                if (input.all { it.isDigit() }) {
-                    input.toInt() % 2 != 0
-                } else {
-                    throw IllegalArgumentException("Input string is not a valid number")
-                }
-            }
-
             is Double -> {
                 val number = input.roundToInt()
                 number % 2 != 0
@@ -43,4 +35,22 @@ object Excercise_1_NullabilityHandlingSolution {
             else -> throw IllegalArgumentException("Unsupported input type: ${input?.javaClass?.name}")
         }
     }
+}
+
+
+fun returnIfNumber(input: Any?): Int {
+    return when (input) {
+        is Int -> -input
+        is String -> {
+            input.toIntOrNull() ?: throw IllegalStateException("Illegal")
+        }
+        is Double -> input.roundToInt()
+        else -> throw IllegalStateException("Illegal")
+    }
+}
+
+
+
+fun test(): Unit {
+    println("test ")
 }

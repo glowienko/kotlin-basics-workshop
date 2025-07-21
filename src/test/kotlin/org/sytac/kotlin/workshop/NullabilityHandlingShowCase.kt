@@ -6,7 +6,7 @@ class NullabilityTest {
 
     @Test
     fun `should check nullability`() {
-        val dev = Contractor(
+        val javaDev = Developer(
             firstName = "John",
             lastName = "Doe",
             workPlace = WorkplaceDetails(
@@ -17,30 +17,32 @@ class NullabilityTest {
             )
         )
 
-        val contructionWorker = Contractor(
-            firstName = "Mike",
-            secondName = "Carlo",
-            lastName = "Foo",
-            workPlace = WorkplaceDetails(
-                name = "Chinese Construction Corp",
-                address = null,
-                title = null,
-            )
-        )
+        val nullValue: String? = null
+        val elvisValue: String = nullValue ?: "fallback value taken"
+        val elvisFallbackLength: Int = nullValue?.length ?: 0
+        val nullableLength: Int? = nullValue?.length // ok - return just null
 
-        val secondDevName2: String? = dev.secondName
-        val secondNameNotNullDontDoIt: String = dev.secondName!! // if null - throws NPE
-        val secondDevName: String = dev.secondName ?: "No second name provided"
+        println(elvisValue) // prints "fallback value taken"
+        println(elvisFallbackLength) // prints 0
+
+        val nonNullString: String = nullValue!! //NPE exception!
+        val lengthOfNull: Int = nullValue!!.length //NPE exception!
+        val lengthOfNull2: Int? = nullValue?.length// safe call, returns null
+
+
+
+        val secondDevName2: String? = javaDev.secondName
+        val secondDevName: String = javaDev.secondName ?: "No second name provided"
         val secondNameNotNull: String = requireNotNull(secondDevName2)
-        val secondDevName3: String = dev.secondName.takeOrEmpty()
+        val secondDevName3: String = javaDev.secondName.takeOrEmpty()
+        val secondNameNotNullDontDoIt: String = javaDev.secondName!! // if null - throws NPE
 
-        val secondDevNameLen: Int = dev.copy(secondName = null).secondName?.length ?: 0
+        val secondDevNameLen: Int = javaDev.copy(secondName = null).secondName?.length ?: 0
 
-
-        val devWorkPlaceAddress: String = dev.workPlace?.address ?: "No address provided"
-        val devWorkPlaceAddress2 = dev.workPlace?.let { it.address ?: "No address" }
-        val upparCaseAddressDescription: String? = dev.workPlace?.address?.uppercase()?.let { "address of employee: $it" }
-        val addressDescription2: String = dev.workPlace
+        val devWorkPlaceAddress2: String? = javaDev.workPlace?.let { it: WorkplaceDetails -> it.address ?: "No address" }
+        val devWorkPlaceAddress3: String? = javaDev.workPlace?.let { it.address ?: "No address" }
+        val upparCaseAddressDescription: String? = javaDev.workPlace?.address?.uppercase()?.let { "address of employee: $it" }
+        val addressDescription2: String = javaDev.workPlace
             ?.let { it.address to it.title }
             .takeIf { it?.first != null }
             ?.let { (address, title) ->
@@ -51,7 +53,7 @@ class NullabilityTest {
 
     fun String?.takeOrEmpty(): String = this ?: ""
 
-    data class Contractor(
+    data class Developer(
         val firstName: String,
         val secondName: String? = null,
         val lastName: String,

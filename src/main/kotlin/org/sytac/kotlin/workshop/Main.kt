@@ -84,20 +84,16 @@ fun main() {
 
     println(sumValues)
     println(multiplyValues)
-    println(operateOn(2,3, multiply))
-    handleValues(5,6, { x, y -> println("$x,$y") })
+    println(operateOn(2, 3, multiply))
+    handleValues(5, 6, { x, y -> println("$x,$y") })
 
     presentStrings()
 
-    Athlete(
+    val athlete = Athlete(
         name = "John Doe",
         discipline = "Running",
         age = 25
-    ).also { athlete ->
-        println("Athlete: $athlete")
-        val (name, discipline, age) = athlete
-        println("destructured: name=$name, discipline=$discipline, age=$age")
-    }
+    ).also { athlete: Athlete -> println("Athlete: $athlete") }
 }
 
 

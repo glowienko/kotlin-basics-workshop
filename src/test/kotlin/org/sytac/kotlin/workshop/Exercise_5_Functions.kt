@@ -22,6 +22,7 @@ class Exercise_5_Functions {
     fun generateRandomString(length: Int = 10): String {
         val charset = ('a'..'z') + ('A'..'Z')
         TODO("implement random string generation logic here, make this function 1 linter expression :) ")
+        //you can use run { } on charset and then create a range and map it somehow to generate a random string :)
     }
 
 
@@ -43,7 +44,7 @@ class Exercise_5_Functions {
     }
 
     @Test
-    fun `convert  functions from StringExercises to extensionFun`() {
+    fun `convert  function reverseWords from StringExercises to extensionFun on String`() {
         val input = "kotlin is awesome"
         //uncomment below and implement the extension function
 //        assertThat(input.reverseWords()).isEqualTo("awesome is kotlin")

@@ -42,7 +42,7 @@ class Exercise_3_CollectionsWithObjects {
 
     @Test
     fun `map runners to their  nicknames only for runners with coach`() {
-        val nicknames = emptyList<String>() //todo implement me and map runners to their nicknames only for runners with coach
+        val nicknames = emptyList<String>() //todo runners. ... - implement me and map runners to their nicknames only for runners with coach
         assertThat(nicknames).isNotNull()
     }
 

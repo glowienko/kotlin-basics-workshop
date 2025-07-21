@@ -31,7 +31,7 @@ data class Runner(
     var coach: Coach? = null,
 ) : Human {
     val nickName: String
-        get() = "Runner $name  nr. ${Random.nextInt(1..1000)}"
+        get() = "Runner $name  nr. $age"
 
     fun assignCoach(coach: Coach): Runner = copy(coach = coach)
     fun addGear(vararg item: String) {

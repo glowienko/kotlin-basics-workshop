@@ -36,7 +36,6 @@ class Exercise_6_Classes {
     @Test
     fun `add extension fun implementations to the Runner class and make this test pass`() {
         val runner = Runner("John", LocalDate.parse("1990-05-01"), 1.75, 70.0)
-
 //        val runnerWithGoldMedal = runner.winGoldMedal()
 
         //uncomment below
