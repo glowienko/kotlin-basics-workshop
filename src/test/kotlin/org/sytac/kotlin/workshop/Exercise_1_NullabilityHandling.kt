@@ -21,11 +21,11 @@ class Exercise_1_NullabilityHandling {
     }
 
     fun squareOrNull(x: Int?): Int? {
-        TODO("use safe call +  let + elvis operator, or without let :) ")
+        TODO("use safe call :) ")
     }
 
     fun squareOrZero(x: Int?): Int {
-        TODO("use safe call +  let + elvis operator, or without let :) ")
+        TODO("use safe call +  let + elvis operator :) ")
     }
 
     @Test
