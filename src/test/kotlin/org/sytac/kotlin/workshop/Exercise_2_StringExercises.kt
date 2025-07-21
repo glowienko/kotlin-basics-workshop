@@ -71,6 +71,18 @@ class Exercise_2_StringExercises {
     fun maskCardNumber(number: String): String {
         TODO("Mask all but last 4 digits with *")
     }
+
+    //7. remove duplicated chars from a string, preserving order and case
+    @Test
+    fun `remove duplicated chars from a string`() {
+        assertThat(removeDuplicates("kooootliiiinn")).isEqualTo("kotlin")
+        assertThat(removeDuplicates("Aaaabbbc")).isEqualTo("Abc")
+    }
+
+
+    fun removeDuplicates(input: String): String {
+    TODO("implement me")
+    }
 }
 
 

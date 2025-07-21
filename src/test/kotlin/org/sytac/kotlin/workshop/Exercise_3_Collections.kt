@@ -22,11 +22,7 @@ class Exercise_3_Collections {
 
     @Test
     fun `generate squares of even numbers between 1 and 10 then take if not empty also println all results`() {
-        val result: List<Int>? = (1..10)
-            .filter { it % 2 == 0 }
-            .map { it * it }
-            .takeIf { it.isNotEmpty() }
-            .also { resultList -> resultList?.forEach { println(it) } }
+        val result: List<Int>? = emptyList() //todo implement me
         assertThat(result).isEqualTo(listOf(4, 16, 36, 64, 100))
     }
 
@@ -42,8 +38,7 @@ class Exercise_3_Collections {
         val (word: String, length: Int) = result.first()
 
         //for each element of a zipped map destructure it to word and length and print
-        result.forEach {
-            (word, length) -> println("Word: $word, Length: $length")
+        result.forEach { //todo destructure to word and length inside for each - "it" is a Pair<String, Int>
         }
     }
 

@@ -38,7 +38,7 @@ class Exercise_6_Classes {
         val runner = Runner("John", LocalDate.parse("1990-05-01"), 1.75, 70.0)
 //        val runnerWithGoldMedal = runner.winGoldMedal()
 
-        //uncomment below
+        //uncomment below and implement the extension functions as infix function
 //        runner sameAgeAs runner shouldBe true
 //        runner sameAgeAs runner.copy(birtDate = LocalDate.now()) shouldBe false
 //        runner.hasGoldMedal() shouldBe false

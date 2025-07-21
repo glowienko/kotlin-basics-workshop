@@ -78,7 +78,7 @@ class Exercise_1_NullabilityHandling {
 
     @Test
     fun `you can run this too see how requireNotNull works`() {
-        var input: String? = null
+        val input: String? = null
 
         assertThrows<IllegalArgumentException> {
             requireNotNull(input)
