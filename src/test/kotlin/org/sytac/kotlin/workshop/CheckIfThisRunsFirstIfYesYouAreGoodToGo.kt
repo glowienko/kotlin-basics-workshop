@@ -11,7 +11,7 @@ import org.sytac.kotlin.workshop.sport.Runner
 class CheckIfThisRunsFirstIfYesYouAreGoodToGo {
 
     @Test
-    fun `runner object test`() {
+    fun `should test if all runs for you`() {
         val runner = Runner("John", LocalDate.now().minusYears(25), 1.75, 70.0)
         assertThat(runner.name).isEqualTo("John")
         assertThat(runner.age).isEqualTo(25)

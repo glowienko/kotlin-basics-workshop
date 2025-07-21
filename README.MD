@@ -10,6 +10,12 @@ It has showcases for basic Kotlin features, and tasks in JUnit format.
 - IntelliJ IDEA installed
 - gradle downloaded / configured in IntelliJ IDEA (should be automatic when you clone)
 
+## Check if all works
+
+- in IntelliJ IDEA -> new -> project from version control -> paste https://github.com/glowienko/kotlin-basics-workshop.git
+- go to CheckIfThisRunsFirstIfYesYouAreGoodToGo file
+- run existing test, it should pass
+
 ## How to run the exercises
 
 test package is the starting point. <br> 
