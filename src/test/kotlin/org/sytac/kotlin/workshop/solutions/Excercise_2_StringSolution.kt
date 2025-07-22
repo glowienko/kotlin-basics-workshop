@@ -13,15 +13,16 @@ object Excercise_2_StringSolution {
         return reversed.joinToString(" ")
     }
 
+    fun findCapitalizedWords(input: String): List<String> =
+        input.split(" ")
+            .filter({ word -> word.isNotEmpty() })
+            .filter { it.first().isUpperCase() }
+
+
 //    fun normalizeWhitespace(input: String): String {
 //        return input.replace(" ", "").trim()
 //    }
 
-    fun findCapitalizedWords(input: String): List<String> {
-        return input.split(" ")
-            .filter({ word -> word.isNotEmpty() })
-            .filter { it.first().isUpperCase() }
-    }
 
     fun maskCardNumber(number: String): String {
         val visible = number.takeLast(4)
