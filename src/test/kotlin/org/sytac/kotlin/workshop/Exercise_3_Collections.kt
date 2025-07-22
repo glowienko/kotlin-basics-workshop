@@ -22,7 +22,8 @@ class Exercise_3_Collections {
 
     @Test
     fun `generate squares of even numbers between 1 and 10 then take if not empty also println all results`() {
-        val result: List<Int>? = emptyList() //todo implement me
+        //todo implement me
+        val result: List<Int>? = emptyList()
         assertThat(result).isEqualTo(listOf(4, 16, 36, 64, 100))
     }
 
@@ -38,7 +39,8 @@ class Exercise_3_Collections {
         val (word: String, length: Int) = result.first()
 
         //for each element of a zipped map destructure it to word and length and print
-        result.forEach { //todo destructure to word and length inside for each - "it" is a Pair<String, Int>
+        //todo destructure to word and length inside for each - "it" is a Pair<String, Int>
+        result.forEach {
         }
     }
 
@@ -62,10 +64,10 @@ class Exercise_3_Collections {
             DayOfWeek.SUNDAY to 2.hours,
         )
 
-        val weekdays = TODO(" Implement me ")
-        val totalDurationForAllDays: Duration = TODO(" Implement me ")
-        val longestDayDuration = TODO(" Implement me ")
-        val shortestMillisDuration = TODO(" Implement me ")
+        val weekdays = TODO(" Implement me  filtering only map elements that have key as weekeday")
+        val totalDurationForAllDays: Duration = TODO(" Implement me calculating total duration for all days in a map")
+        val longestDayDuration = TODO(" Implement me finding longest day duration")
+        val shortestMillisDuration = TODO(" Implement me calculating smallest duration from all days in miliseconds ")
 
         //uncoment below to check your solution!
 //        assertThat(totalDurationForAllDays).isEqualTo(20.hours)
@@ -74,10 +76,10 @@ class Exercise_3_Collections {
     }
 
     @Test
-    fun `map LocalDateTime to weekday name and filter weekends`() {
+    fun `map LocalDateTime a local date and create a map assosiating it with its weekday name and filter weekends out - only week days`() {
         val base = LocalDateTime.of(2024, 4, 1, 12, 0) // Monday
         val expectedStartDate = base.toLocalDate()
-        val days = (0..6).map { base.plusDays(it.toLong()) } + null
+        val days: List<LocalDateTime?> = (0..6).map { base.plusDays(it.toLong()) } + null
 
         val weekdays: Map<LocalDate, String> = TODO(" Implement me ")
 

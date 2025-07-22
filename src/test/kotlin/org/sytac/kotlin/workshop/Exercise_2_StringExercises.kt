@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test
 class Exercise_2_StringExercises {
 
 
-    // -------------------------------
-    // Exercise 0: Removing brackets from string
-    // -------------------------------
+
     @Test
     fun `should remove brackets from string`() {
         assertThat(removeBrackets("Hello [World]")).isEqualTo("Hello World")
@@ -23,7 +21,6 @@ class Exercise_2_StringExercises {
         TODO("remove square brackets, use safe call and elvis operator")
     }
 
-    // 1. Reverse words in a sentence, preserve punctuation
     @Test
     fun `should reverse words but not punctuation`() {
         assertThat(reverseWords("Hello, world!")).isEqualTo("world, Hello!")
@@ -35,16 +32,6 @@ class Exercise_2_StringExercises {
     }
 
     @Test
-    fun `should collapse multiple spaces and trim ends`() {
-        assertThat(removeWhitespace("   Kotlin     is  fun  ")).isEqualTo("Kotlinisfun")
-    }
-
-    fun removeWhitespace(input: String): String {
-        TODO("Use replace and trim to normalize spaces and tabs")
-    }
-
-    // 4. Extract all capitalized words
-    @Test
     fun `should return all capitalized words`() {
         assertThat(findCapitalizedWords("The quick brown Fox jumps over the lazy Dog"))
             .isEqualTo(listOf("The", "Fox", "Dog"))
@@ -54,14 +41,12 @@ class Exercise_2_StringExercises {
         TODO("Use split and filter to find capitalized words")
     }
 
-    // 5. Kotlin has a lot of built-in string functions, one of them is commonPrefixWith.
     @Test
     fun `should return longest common prefix`() {
         assertThat("Java".commonPrefixWith("JavaScript")).isEqualTo("Java")
         assertThat(("Spring".commonPrefixWith("Hibernate"))).isEqualTo("")
     }
 
-    // 6. Mask all but last 4 digits of a credit card
     @Test
     fun `should mask all but last 4 digits`() {
         assertThat(maskCardNumber("1234567812345678")).isEqualTo("************5678")
@@ -72,7 +57,7 @@ class Exercise_2_StringExercises {
         TODO("Mask all but last 4 digits with *")
     }
 
-    //7. remove duplicated chars from a string, preserving order and case
+
     @Test
     fun `remove duplicated chars from a string`() {
         assertThat(removeDuplicates("kooootliiiinn")).isEqualTo("kotlin")
