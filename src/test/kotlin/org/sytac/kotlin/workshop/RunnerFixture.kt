@@ -17,7 +17,7 @@ object RunnerFixture {
         weight = 75.0
     )
 
-    val RUNNERS_LIST = listOf(SIMPLE_RUNNER, SIMPLE_RUNNER)
+    val RUNNERS_LIST = listOf(SIMPLE_RUNNER, SIMPLE_RUNNER.copy(birtDate = LocalDate.now().minusYears(15)))
 
 
     fun generateRandomRunners(): List<Runner> =

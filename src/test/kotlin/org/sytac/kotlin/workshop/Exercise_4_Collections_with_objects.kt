@@ -6,6 +6,7 @@ import assertk.assertions.isFalse
 import assertk.assertions.isNotEmpty
 import assertk.assertions.isNotNull
 import assertk.assertions.isTrue
+import java.time.LocalDate
 import org.junit.jupiter.api.Test
 import org.sytac.kotlin.workshop.RunnerFixture.SIMPLE_RUNNER
 import org.sytac.kotlin.workshop.RunnerFixture.generateRandomRunners
@@ -26,15 +27,18 @@ class Exercise_3_CollectionsWithObjects {
 
     @Test
     fun `evaluate if none of the given runners should have more than 5 medals and if all have empty medals`() {
-        val given = listOf(SIMPLE_RUNNER, SIMPLE_RUNNER.copy(medals = List(8) { Medal(MedalType.GOLD, 2020) }))
+        val given = listOf(SIMPLE_RUNNER.copy(birtDate = LocalDate.now().minusYears(20)), SIMPLE_RUNNER.copy(medals = List(8) { Medal(MedalType.GOLD, 2020) }))
 
-        val resultFalse =
-            given.map { true }.first() //tODO change me and filter given list correctly -> check if none have more than 5 medals
-        val resultTrue =
-            listOf(SIMPLE_RUNNER).map { false }.first() //TODO change me and filter given list correctly -> check if all have empty medals
+        //tODO change me and filter given list correctly -> check if none have more than 5 medals
+        val resultNoneHaveMoreThanFiveMedals = given.map { true }.first()
+        //TODO change me and filter given list correctly -> check if all have empty medals
+        val resultAllHaveEmptyMedals = listOf(SIMPLE_RUNNER).map { true }.first()
+        //TODO calculate total age of all runners from given list
+        val totalRunnersAge = 0
 
-        assertThat(resultFalse).isFalse()
-        assertThat(resultTrue).isTrue()
+        assertThat(resultNoneHaveMoreThanFiveMedals).isFalse()
+        assertThat(resultAllHaveEmptyMedals).isFalse()
+        assertThat(totalRunnersAge).isEqualTo(45)
     }
 
     @Test
