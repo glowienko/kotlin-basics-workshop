@@ -4,6 +4,7 @@ import assertk.assertThat
 import assertk.assertions.hasSize
 import assertk.assertions.isEqualTo
 import assertk.assertions.isNotEmpty
+import assertk.assertions.isTrue
 import org.junit.jupiter.api.Test
 
 class Exercise_5_Functions {
@@ -17,6 +18,8 @@ class Exercise_5_Functions {
         assertThat(resultRandomString).isNotEmpty()
         assertThat(generateRandomString(10).length).isEqualTo(10)
         assertThat(generateRandomString(15).length).isEqualTo(15)
+        assertThat(generateRandomString(15).isNotEmpty()).isTrue()
+        assertThat(generateRandomString(15).none { it.isDigit() }).isTrue()
     }
 
     //todo add default to this function :)
@@ -32,7 +35,7 @@ class Exercise_5_Functions {
         val gear: List<String> = listOf(generateRandomString(5), generateRandomString(5))
         val gear2 = arrayOf(generateRandomString(10), generateRandomString(5))
 
-        val runnerWithGear =  TODO()
+        val runnerWithGear = TODO()
         //uncomment below to check your solution
 //        assertThat(runnerWithGear.gear).isNotEmpty()
 //        assertThat(runnerWithGear.gear).hasSize(2)
@@ -50,7 +53,6 @@ class Exercise_5_Functions {
         //uncomment below and implement the extension function
 //        assertThat(input.reverseWords()).isEqualTo("awesome is kotlin")
     }
-
 
 
 }

@@ -30,7 +30,6 @@ class NullabilityTest {
         val lengthOfNull2: Int? = nullValue?.length// safe call, returns null
 
 
-
         val secondDevName2: String? = javaDev.secondName
         val secondDevName: String = javaDev.secondName ?: "No second name provided"
         val secondNameNotNull: String = requireNotNull(secondDevName2)
@@ -49,7 +48,6 @@ class NullabilityTest {
                 "address: ${requireNotNull(address)} ${title?.let { "of a job title $it" } ?: ""}"
             } ?: throw IllegalStateException(" cannot be null")
     }
-
 
     fun String?.takeOrEmpty(): String = this ?: ""
 
